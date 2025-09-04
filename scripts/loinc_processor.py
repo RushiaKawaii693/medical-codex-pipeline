@@ -4,6 +4,8 @@ from datetime import datetime
 # Load the data
 data = pd.read_csv('input\Loinc.csv')
 
+data.info()  # Check the structure of the DataFrame
+
 # Standardize column names
 # Replace 'LOINC_NUM' and 'LONG_COMMON_NAME' with the actual column names in your CSV for code and description
 data = data.rename(columns={
