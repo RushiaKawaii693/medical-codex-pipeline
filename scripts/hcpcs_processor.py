@@ -1,14 +1,11 @@
 import pandas as pd
+from datetime import datetime
 
 # Path to the HCPCS text file
-file_path = "input\HCPC2025_OCT_ANWEB_v2.txt"
-
-# Read the file into a DataFrame
-# The file appears to be fixed-width formatted, so we'll use read_fwf
+file_path = "input\\HCPC2025_OCT_ANWEB_v2.txt"
 
 def load_hcpcs_to_df(file_path):
-    # You may need to adjust colspecs based on actual column widths
-    # Here is a simple guess based on the sample
+    # Adjust colspecs as needed for your file
     colspecs = [(0, 11), (11, 90), (90, 180), (180, 200), (200, 220), (220, 240), (240, 260), (260, 280)]
     column_names = [
         "Code", "Description1", "Description2", "Type", "Unknown1", "Unknown2", "Unknown3", "Unknown4"
@@ -18,8 +15,20 @@ def load_hcpcs_to_df(file_path):
 
 if __name__ == "__main__":
     df = load_hcpcs_to_df(file_path)
-    print(df.head())
-    ## save as csv to Module1_MedicalCodexes/hcpcs/output
-    output_path = "output\HCPC2025_OCT_ANWEB_v2.csv"
-    df.to_csv(output_path, index=False)
-
+    
+    # Combine Description1 and Description2 for a full description
+    df['description'] = df['Description1'].fillna('') + ' ' + df['Description2'].fillna('')
+    df['description'] = df['description'].str.strip()
+    
+    # Standardize column names
+    df_standardized = pd.DataFrame({
+        'code': df['Code'],
+        'description': df['description'],
+        'last_updated': datetime.now().isoformat()
+    })
+    
+    print(df_standardized.head())
+    
+    # Save as standardized CSV
+    output_path = "output\\hcpcs_standardized.csv"
+    df_standardized.to_csv(output_path, index=False)
