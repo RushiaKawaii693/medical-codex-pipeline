@@ -49,4 +49,4 @@ icdcodes_seperate['last_updated'] = '2025-09-07'
 
 
 ## Save the DataFrame to a CSV file
-icdcodes_seperate.to_csv("output/icd10cm_order_2025.csv", index=False)
+icdcodes_seperate.to_csv("output/icdcodes_seperate.csv", index=False)
