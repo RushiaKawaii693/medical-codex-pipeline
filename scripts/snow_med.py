@@ -10,6 +10,7 @@ df = pl.read_csv(
     quote_char=None,
     encoding='utf8-lossy',
     truncate_ragged_lines=True,
+    n_rows=100000,
     dtypes={
         'id': pl.Utf8,
         'effectiveTime': pl.Utf8,
