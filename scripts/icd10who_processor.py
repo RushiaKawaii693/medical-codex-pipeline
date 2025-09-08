@@ -11,19 +11,19 @@ columns = ['level', 'type', 'usage', 'sort', 'parent', 'code', 'display_code',
 
 df = pd.read_csv(file_path, sep=';', header=None, names=columns)
 
-df_who = df[[
+df_whose = df[[
     'icd10_code',
     'detailed_title'
 ]]
 
-df_who = df_who.rename(columns={
+df_whose = df_whose.rename(columns={
     'icd10_code':'code',
     'detailed_title':'description'
 })
-df_who['last_updatede'] ='2025-09-07'
+df_whose['last_updatede'] ='2025-09-07'
 
-output_path = 'output/icd102019syst_codes.csv'
-df_who.to_csv(output_path, index=False)
+output_path = 'output/icd10whose.csv'
+df_whose.to_csv(output_path, index=False)
 
 print(f"Successfully parsed {len(df)} records from {file_path}")
 print(f"Saved to {output_path}")
