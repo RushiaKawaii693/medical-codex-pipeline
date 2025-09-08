@@ -32,7 +32,7 @@ df_snow = pl.DataFrame({
 
 output_dir = Path('output')
 output_dir.mkdir(exist_ok=True)
-output_path = output_dir / 'sct2_Description_Full.csv'
+output_path = output_dir / 'snowmed_sec_2.csv'
 
 df_snow.write_csv(output_path)
 

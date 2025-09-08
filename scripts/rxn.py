@@ -29,7 +29,7 @@ df_standardized = pl.DataFrame({
 
 output_dir = Path('output')
 output_dir.mkdir(exist_ok=True)
-output_path = output_dir / 'RXNATOMARCHIVE.csv'
+output_path = output_dir / 'rxnarchive.csv'
 
 df_standardized.write_csv(output_path)
 
