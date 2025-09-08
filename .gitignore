@@ -15,7 +15,10 @@ Module1_MedicalCodexes/rxnorm/files/*.rrf
 Module1_MedicalCodexes/rxnorm/output/RXNATOMARCHIVE.csv
 Module1_MedicalCodexes/snowmed/sct2_Description_Full-en_US1000124_20250301.txt
 Module1_MedicalCodexes/snowmed/output/sct2_Description_Full.csv
-
+output/RXNATOMARCHIVE.csv
+input/RXNATOMARCHIVE.RRF
+input/sct2_Description_Full-en_US1000124_20250301.txt
+output/sct2_Description_Full.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
