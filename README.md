@@ -41,4 +41,4 @@ All processed codexes are output as tables with these columns:
 ## Notes
 
 - Large raw data files are not tracked in this repository. See `.gitignore`.
-- For questions or issues, contact the course instructor.
+
